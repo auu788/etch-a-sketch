@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Etch-a-Sketch</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(function() {
+	var box = '<div class="box"></div>';
+
+	for(var i=0; i<32; i++)
+	{
+		for(var j=0; j<32; j++)
+		{
+			$('#container').append(box);
+		}
+		$('#container').append('<p>&nbsp</p>');
+	}
+
+	$(".box").hover(function() {
+		$(this).css({
+			"background-color": "blue"
+		})
+	});
+
+
+});
+
+</script></head>
+<body>
+	<div id="container"></div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.box {
+	background-color: red;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+p {
+	line-height: 0;
+}
