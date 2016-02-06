@@ -14,11 +14,7 @@
 
 $(document).ready(function() {
 	var box = '<div class="box"></div>';
-
-	for(var i=0; i<1024; i++)
-	{
-		$('#container').append(box);
-	}
+	reset();
 
 	$(".box").hover(function() {
 		$(this).css({
@@ -26,38 +22,69 @@ $(document).ready(function() {
 		})
 	});
 
-	/*Buttons*/
-	$('#b_reset').on('click', cleanBoard);
-	$('#b_trail').on('click', trail);
-	$('#b_color').on('click', color);
 
-	/* Resets board */
-	function cleanBoard() {
+	$('#b_reset').on('click', function(){
+		reset();
+		$(".box").hover(function() {
+			$(this).css({
+				"background-color": "#43A047"
+			})
+		});
+	});
+
+
+	/*$('#b_resize').on('click', function(){
+		$('.box').remove();
+
+		var ask = prompt("Give me size...");
+		var size = 512/ask;
 
 		$('.box').css({
-			"background-color": "#E53935"
+			"width": size + "px;",
+			"height": size + "px;"
 		});
-	}
 
-	/* Requires jQueryUI */
-	function trail() {
-		cleanBoard();
+		for(var i=0; i<ask*ask; i++)
+		{
+			$('#container').append(box);
+		}
 
-		$('.box').mouseover(function() {
-			$(this).stop().animate({'background-color':'#43A047'},1000);
+		$(".box").hover(function() {
+			$(this).css({
+				"background-color": "#43A047"
+			})
+		});
+	});*/
+
+	$('#b_trail').on('click', function(){
+		reset();
+		$('.box').hover(function(){
+			$(this).css({
+				"background-color": "#43A047"})
+		}).mouseover(function() {
+			$(this).stop().animate({'background-color':'#43A047'},700);
 		}).mouseout(function() {
-			$(this).stop().animate({'background-color':'#E53935'},1000);
+			$(this).stop().animate({'background-color':'#E53935'},700);
 		});
-	}
+	});
 
-	function color() {
-		cleanBoard();
 
+	$('#b_color').on('click', function() {
+		reset();
 		$('.box').hover(function() {
 			$(this).css({
 				"background-color": randomColor()
 			})
 		});
+	});
+
+	function reset() {
+		$('.box').remove();
+
+		for(var i=0; i<64; i++)
+		{
+			$('#container').append(box);
+		}
 	}
 
 	function randomColor() {
