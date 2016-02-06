@@ -7,32 +7,63 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
+
+
 <script>
 
 $(document).ready(function() {
 	var box = '<div class="box"></div>';
 
-	for(var i=0; i<32; i++)
+	for(var i=0; i<1024; i++)
 	{
-		for(var j=0; j<32; j++)
-		{
-			$('#container').append(box);
-		}
-		$('#container').append('<p>&nbsp</p>');
+		$('#container').append(box);
 	}
 
 	$(".box").hover(function() {
 		$(this).css({
-			"background-color": "blue"
-		})
+			"background-color": "#43A047"
+		}).addClass('visited')
 	});
 
+	/*Buttons*/
+	$('#b_reset').on('click', reset);
+	$('#b_trail').on('click', trail);
+
+	function reset() {
+		$('.box').removeClass('visited').css({
+			"background-color": "#E53935"
+		});
+	}
+
+	function trail() {
+		reset();
+
+		$('.box').hover(function() {
+			$(this).css({
+				"background-color": "#43A047"
+			}).addClass('visited').fadeOut(500);
+		})
+	}
 
 });
 
 </script></head>
+
+
+
+
+
+
+
+
 <body>
+	<div id="buttons">
+		<button id="b_resize">Resize</button>
+		<button id="b_trail">Trail</button>
+		<button id="b_color">Colorful</button>
+	</div>
 	<div id="container"></div>
+	<button id="b_reset">RESET</button>
 </body>
 
 </html>
