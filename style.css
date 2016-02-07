@@ -1,18 +1,8 @@
 body {
-	background-color: #EEEEEE;
+	background-color: #424242;
 }
 
 .box {
-	background-color: #E53935;
-	width: 64px;
-	height: 64px;
-	display: inline-block;
-	position: relative;
-	float: left;
-	margin: 0 auto;
-}
-
-.box1 {
 	background-color: #E53935;
 	display: inline-block;
 	position: relative;
@@ -27,7 +17,6 @@ p {
 #container {
 	width: 512px;
 	height: 512px;
-	border: 3px solid red;
 	margin: 0 auto;
 }
 
@@ -35,11 +24,12 @@ p {
 	width: 518px;
 	height: 50px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 button {
-	width: 100px;
+	width: 90px;
 	height: 40px;
 	background-color: #00695C;
 	border: 1px solid #f2f2f2;
@@ -49,12 +39,12 @@ button {
 	text-decoration: none;
 	text-align: center;
 	font-weight: bold;
-	margin-left: 55px;
+	margin-left: 29px;
 	position: relative;
 }
 
 #b_reset {
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 20px;
 	display: block;
 }
